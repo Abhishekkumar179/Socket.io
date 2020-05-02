@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="telemo-chat.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.2/socket.io.js"></script>
+    <script type="text/javascript" src="telemo-chat.js"></script>
+    <script type="text/javascript">
+
+            const userId = prompt("enter name");
+            window.onload=function(){
+            const options = 
+            { 
+                  chatName: userId, 
+                  width: "300px", 
+                  height: "400px", 
+                  chatContainer: document.querySelector('div#telemo-chat')
+            }; 
+              const api = new TelemoChatApi(userId, options);
+            TelemoChatApi.StartSocket(api);
+             //alert("connected ",userId);
+            };
+          </script>
+  </head>
+  <body>
+    <div id="telemo-chat">
+      <div id="telemo-chat-list">
+        <div class="sd-name">
+          <div class="userOnlineDiv"></div>
+          <a >
+          <span></span>
+          </a>
+        </div>
+        <div class="sd-name">
+          <div class="userOnlineDiv"></div>
+          <a >
+          <span></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
